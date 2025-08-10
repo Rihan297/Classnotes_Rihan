@@ -5,7 +5,7 @@ pipeline {
         stage('SCM_Checkout') {
             steps {
                 echo 'Perform SCM_Checkout'
-				https://github.com/Rihan297/Classnotes_Rihan.git
+				git 'https://github.com/Rihan297/Classnotes_Rihan.git'
             }
         }
         stage('Application_Build') {
