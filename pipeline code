@@ -11,7 +11,7 @@ tools {
 				git ‘https://github.com/Rihan297/Classnotes_Rihan.git’
             }
         }
-     
+    
         stage('Build code') {
             steps {
                sh 'mvn package'
