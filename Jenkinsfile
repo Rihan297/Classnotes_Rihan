@@ -1,20 +1,20 @@
 pipeline {
     agent any
 
-tools {
- maven 'rihanmaven'
-}
+    tools {
+        maven 'rihanmaven'
+    }
+
     stages {
-        stage('clone repository') {
+        stage('Clone Repository') {
             steps {
-               
-				git ‘https://github.com/Rihan297/Classnotes_Rihan.git’
+                git url: 'https://github.com/Rihan297/Classnotes_Rihan.git'
             }
         }
-    
-        stage('Build code') {
+
+        stage('Build Code') {
             steps {
-               sh 'mvn package'
+                sh 'mvn package'
             }
         }
     }
