@@ -1,22 +1,20 @@
 pipeline {
-    agent { label 'slave1' }
+    Agent any
 
+tools {
+ maven 'rihanmaven'
+}
     stages {
-        stage('SCM_Checkout') {
+        stage('clone repository') {
             steps {
-                echo 'Perform SCM_Checkout'
-				git 'https://github.com/Rihan297/Classnotes_Rihan.git'
+                echo 'clone repo'
+				git ‘https://github.com/Rihan297/Classnotes_Rihan.git’
             }
         }
-        stage('Application_Build') {
+     
+        stage('Build code') {
             steps {
-                echo 'Perform Application_Build'
-				sh 'mvn clean package'
-            }
-        }
-        stage('Deploy to Target Server') {
-            steps {
-                echo 'Perform Deployment'
+               sh 'mvn package'
             }
         }
     }
